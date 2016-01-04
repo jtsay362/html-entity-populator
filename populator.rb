@@ -59,7 +59,7 @@ class HtmlEntitiesPopulator
         "char_filter" : {
           "no_special" : {
             "type" : "mapping",
-            "mappings" : ["-=>", "&=>", "#=>"]
+            "mappings" : ["-=>", "&=>", "#=>", ";=>", "x=>"]
           }
         },
         "analyzer" : {
@@ -83,11 +83,11 @@ class HtmlEntitiesPopulator
         },
         "code" : {
           "type" : "string",
-          "index" : "not_analyzed"
+          "analyzer" : "lower_keyword"
         },
         "namedCodes" : {
           "type" : "string",
-          "index" : "not_analyzed"
+          "analyzer" : "lower_keyword"
         },
         "aliases" : {
           "type" : "string",
